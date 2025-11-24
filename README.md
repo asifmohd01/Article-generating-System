@@ -1,178 +1,193 @@
-🏥 Healthy Gut AI — SEO Article Generation System
 
-AI-Powered SEO Content Generator • MERN Stack • JWT Auth • Tailwind UI • n8n Automation
+---
 
-> 📚 **[NEW] Complete Documentation Available!**  
-> Read: [`QUICK_START.md`](./QUICK_START.md) to get started in 5 minutes  
-> All fixes: [`PROJECT_COMPLETE.md`](./PROJECT_COMPLETE.md)  
-> Detailed guide: [`DOCUMENTATION_INDEX.md`](./DOCUMENTATION_INDEX.md)
+# 🏥 Healthy Gut AI — SEO Article Generation System
 
-A modern, full-stack SEO article generation platform built using the MERN (MongoDB, Express, React, Node) stack with JWT authentication, AI-powered content generation, and workflow automation using n8n.
+**AI-Powered SEO Content Generator • MERN Stack • JWT Auth • Tailwind UI • n8n Automation**
 
-This system generates SEO-optimized articles (pillar + supporting), builds structured JSON-LD, exports PDFs, and includes a beautiful dark UI.
+A modern, full-stack SEO article generation platform built using the **MERN** stack with **JWT authentication**, **AI-powered content generation**, **PDF export**, **JSON-LD schema**, and **workflow automation using n8n**.
 
-🌟 Features Overview
-🔐 Authentication & Users
+This system generates SEO-optimized articles (pillar + supporting), includes a beautiful dark UI, and supports automated article workflows.
 
-Secure login/registration
+---
 
-JWT-based authentication
+## 🌟 Features Overview
 
-Protected routes
+### 🔐 Authentication & Users
 
-Password hashing with bcrypt
+* Secure login & registration
+* JWT-based authentication
+* Protected routes
+* Bcrypt password hashing
+* Persistent login
 
-Persistent login support
+### 📝 AI-Powered Article Generation
 
-📝 AI-Powered Article Generation
+* Pillar articles (2500–3000 words)
+* Supporting articles (1000–1500 words)
+* SEO meta descriptions
+* JSON-LD schema markup
+* FAQ generation
+* PDF export
 
-Pillar articles (2500–3000 words)
+### 🎨 Frontend (React + Tailwind CSS)
 
-Supporting articles (1000–1500 words)
+* Fully responsive dark theme
+* Framer Motion animations
+* Dashboard with article cards
+* Skeleton loaders
+* Toast notifications
 
-SEO meta descriptions
+### 🛠 Backend (Node.js + Express)
 
-JSON-LD schema markup
+* REST API architecture
+* MongoDB + Mongoose
+* Rate limiting
+* Error-handling middleware
+* Input validation
+* AI service integration (Gemini or Simulator)
 
-FAQ generation
+### 🔄 n8n Workflow Automation
 
-PDF export
+* Auto-generate articles via API
+* Manual & scheduled workflows
+* Bulk generation support
+* Workflow JSON export
 
-🎨 Frontend (React + Tailwind CSS)
+---
 
-Modern dark theme
+# 📁 Project Structure
 
-Responsive design
-
-Framer Motion animations
-
-Dashboard with article cards
-
-Skeleton loaders
-
-Toast notifications
-
-🛠 Backend (Node.js + Express)
-
-REST API
-
-MongoDB + Mongoose
-
-Rate limiting
-
-Error-handling middleware
-
-AI service integration (Gemini / Simulator)
-
-Input sanitization
-
-🔄 n8n Workflow Automation
-
-Auto-generate articles via API
-
-Manual triggers
-
-Scheduled workflows
-
-Bulk generation
-
-Workflow JSON export included
-
-📁 Project Structure
+```
 Article Generating System/
-├── client/ # React Frontend
-│ ├── src/
-│ │ ├── pages/
-│ │ ├── components/
-│ │ ├── context/
-│ │ ├── App.jsx
-│ │ └── main.jsx
-│ └── package.json
+├── client/                      # React Frontend
+│   ├── src/
+│   │   ├── pages/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── package.json
 │
-├── server/ # Express Backend
-│ ├── controllers/
-│ ├── routes/
-│ ├── models/
-│ ├── middleware/
-│ ├── services/
-│ ├── test-api.js
-│ ├── test-register.js
-│ ├── test-create-article.js
-│ ├── test-ai-status.js
-│ ├── run-tests.js
-│ ├── check-env.js
-│ ├── start.bat
-│ ├── start.ps1
-│ ├── index.js
-│ └── package.json
+├── server/                      # Express Backend
+│   ├── controllers/
+│   ├── routes/
+│   ├── models/
+│   ├── middleware/
+│   ├── services/
+│   ├── test-api.js
+│   ├── test-register.js
+│   ├── test-create-article.js
+│   ├── test-ai-status.js
+│   ├── run-tests.js
+│   ├── check-env.js
+│   ├── start.bat
+│   ├── start.ps1
+│   ├── index.js
+│   └── package.json
 │
 ├── n8n/
-│ └── workflows/
-│ └── article-generation.json
+│   └── workflows/
+│       └── article-generation.json
 │
-├── docs/
-│ └── screenshots/
-│ ├── dashboard.png
-│ ├── create-article.png
-│ ├── view-article.png
-│ └── n8n-workflow.png
+├── screens/
+│   ├── homePage.png
+│   ├── register.png
+│   ├── login.png
+│   ├── Dashboard.png
+│   ├── generate-article.png
+│   ├── content.png
+│   ├── settings.png
+│   └── n8nWrorkflow.png
 │
 └── README.md
+```
 
-🚀 Getting Started
-1️⃣ Clone Repository
-git clone https://github.com/<your-username>/<repo>.git
-cd "Article Generating System"
+---
 
-2️⃣ Backend Setup
+# 🚀 Getting Started
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/asifmohd01/Article-generating-System
+cd "Article-generating-System"
+```
+
+---
+
+## 2️⃣ Backend Setup
+
+```bash
 cd server
 npm install
+```
 
-Create .env:
+Create `.env`:
 
+```env
 PORT=4000
 MONGO_URL=your_mongodb_url
 JWT_SECRET=your_secret_key
 JWT_EXPIRES_IN=7d
 
-# AI configuration
-
 AI_API_KEY=your_gemini_key
 AI_API_PROVIDER=gemini
+```
 
-Start development server:
+Start backend (development):
 
+```bash
 npm run dev
+```
 
-Start production server:
+Start backend (production):
 
+```bash
 npm start
+```
 
-3️⃣ Frontend Setup
+---
+
+## 3️⃣ Frontend Setup
+
+```bash
 cd ../client
 npm install
 npm run dev
+```
 
-Open the app:
-👉 http://localhost:5173
+Open in browser:
+👉 [http://localhost:5173](http://localhost:5173)
 
-4️⃣ n8n Setup (Automation)
-Install n8n:
+---
+
+## 4️⃣ n8n Setup (Automation)
+
+Install n8n globally:
+
+```bash
 npm install -g n8n
+```
 
 Start n8n:
+
+```bash
 n8n start
+```
 
 Open n8n dashboard:
-👉 http://localhost:5678
+👉 [http://localhost:5678](http://localhost:5678)
 
-Import Workflow
+### Import Workflow
 
-Go to:
-
+```
 n8n → Workflows → Import → article-generation.json
+```
 
-Configure HTTP Request Node
+### Configure HTTP Request Node
+
+```
 POST http://localhost:4000/articles/create
 
 Headers:
@@ -181,117 +196,159 @@ Content-Type: application/json
 
 Body:
 {
-"title": "Test Article From n8n",
-"primaryKeyword": "gut health",
-"articleType": "pillar"
+  "title": "Test Article From n8n",
+  "primaryKeyword": "gut health",
+  "articleType": "pillar"
 }
+```
 
-🧪 Testing
+---
 
-All tests are inside /server.
+# 🧪 Testing
 
-Run all tests:
+All tests are located inside `/server`.
+
+### Run full test suite:
+
+```bash
 cd server
 npm test
+```
 
-Run single tests:
+### Run individual tests:
+
+```bash
 node test-api.js
 node test-register.js
 node test-create-article.js
 node test-ai-status.js
+```
 
-Covers:
-✔ API status
+Tests include:
+✔ API health check
 ✔ User registration
-✔ Login/Auth
-✔ Article generation
-✔ AI service availability
-✔ Env variable checks
+✔ Login
+✔ Article creation
+✔ AI service checks
+✔ Environment validation
 
-🖼 Screenshots
+---
 
-### Home
+# 🖼 Screenshots
 
-![Dashboard](/screenshots/homePage.png)
+### 🏠 Home
 
-### Register
+![Home](screens/homePage.png)
 
-![Dashboard](/screenshots/register.png)
+### 📝 Register
 
-### Login
+![Register](screens/register.png)
 
-![Dashboard](/screenshots/login.png)
+### 🔐 Login
 
-### Dashboard
+![Login](screens/login.png)
 
-![Dashboard](/screenshots/Dashboard.png)
+### 📊 Dashboard
 
-### Create Article
+![Dashboard](screens/Dashboard.png)
 
-![Create Article](/screenshots/generate-article.png)
+### ✍️ Create Article
 
-### View Article
+![Create Article](screens/generate-article.png)
 
-![View Article](/screenshots/content.png)
+### 📖 View Article
 
-### Settings
+![View Article](screens/content.png)
 
-![Dashboard](/screenshots/settings.png)
+### ⚙️ Settings
 
-### n8n Workflow
+![Settings](screens/settings.png)
 
-![n8n workflow](/screenshots/n8nWrorkflow.png)
+### 🔄 n8n Workflow
+
+![n8n Workflow](screens/n8nWrorkflow.png)
+
+---
+
+# 🧩 API Endpoints
+
+## Authentication
+
+```
+POST /auth/register
+POST /auth/login
+POST /auth/forgot-password
+POST /auth/reset-password
+GET  /auth/verify
+GET  /auth/ai-status
+```
+
+## Articles (Protected)
+
+```
+POST   /articles/create
+GET    /articles
+GET    /articles/:id
+PUT    /articles/:id
+DELETE /articles/:id
+```
+
+---
+
+# 🗃 Technologies Used
+
+### **Frontend**
+
+* React 18
+* Vite
+* Tailwind CSS
+* Framer Motion
+* Axios
+* jsPDF + html2canvas
+* React Hot Toast
+
+### **Backend**
+
+* Node.js
+* Express.js
+* MongoDB + Mongoose
+* JWT Authentication
+* Bcrypt
+* Rate Limiting
+* dotenv
+
+### **Automation**
+
+* n8n
+* Scheduling
+* HTTP Request nodes
+
+---
+
+# 🛡 Security
+
+* Protected API routes
+* JWT-based authentication
+* Hashed passwords
+* CORS enabled
+* Express rate limiter
 
 
-🗃 Technologies Used
-Frontend
+---
 
-React 18
+# 🙋 Support
 
-Vite
+If you face issues:
 
-Tailwind CSS
+1. Check troubleshooting
+2. Verify `.env`
+3. Restart backend / n8n
+4. Run tests
 
-Framer Motion
+---
 
-Axios
+# ❤️ Built for AI-Powered SEO Content Generation
 
-jsPDF + html2canvas
+---
 
-React Hot Toast
 
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB + Mongoose
-
-JWT
-
-Bcrypt
-
-Rate limiting
-
-dotenv
-
-Automation
-
-n8n
-
-HTTP Request nodes
-
-Scheduling
-
-🛡 Security
-
-Fully protected API routes
-
-JWT-based authentication
-
-Bcrypt-secured passwords
-
-CORS enabled
-
-Express rate limiter
