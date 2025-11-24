@@ -1,0 +1,110 @@
+# ============================================
+#  Node / MERN Project GitIgnore
+#  Healthy Gut AI - SEO Article Generator
+# ============================================
+
+# ---------------------------
+# Node.js
+# ---------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+pnpm-lock.yaml
+
+# ---------------------------
+# Environment Variables
+# ---------------------------
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# Do not ignore example env
+!.env.example
+
+# ---------------------------
+# Logs
+# ---------------------------
+logs/
+*.log
+*.log.*
+log.txt
+
+# ---------------------------
+# Build files (Frontend)
+# ---------------------------
+client/dist/
+client/.vite/
+client/.DS_Store
+
+# Vite cache
+.client/vite/
+
+# ---------------------------
+# Build files (Backend)
+# ---------------------------
+server/dist/
+server/build/
+
+# ---------------------------
+# Operating System Files
+# ---------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+# Temporary files
+# ---------------------------
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# ---------------------------
+# IDE / Editor folders
+# ---------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ---------------------------
+# n8n Files
+# ---------------------------
+.n8n/
+# Allow workflows folder
+!n8n/workflows/
+
+# ---------------------------
+# Coverage / Testing
+# ---------------------------
+coverage/
+.nyc_output/
+jest-cache/
+jest-coverage/
+
+# ---------------------------
+# TypeScript (if added later)
+# ---------------------------
+*.tsbuildinfo
+
+# ---------------------------
+# Misc
+# ---------------------------
+*.sqlite
+*.db
+*.pid
+*.seed
+*.cover
+*.orig
+*.out
+
+# Ignore Windows batch logs
+*.bat~
+*.ps1~

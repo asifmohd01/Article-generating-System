@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom overrides to keep dark theme feel */
+:root {
+  --bg: #0f1724; /* slate-900 */
+  --panel: #0b1220;
+  --muted: #94a3b8;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  @apply bg-slate-900 text-slate-100 antialiased;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Arial';
+}
+
+.btn { @apply px-4 py-2 rounded-md font-medium bg-indigo-600 hover:bg-indigo-500 }
+

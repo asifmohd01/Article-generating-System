@@ -1,0 +1,76 @@
+{
+  "name": "Article Generator via N8N",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "b3d1e7f9-2a4c-4b8e-9c1d-3f5e7a9b2c4d",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "method": "POST",
+        "url": "http://localhost:4000/articles/create",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_JWT_TOKEN_HERE"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "contentType": "application/json",
+        "body": "{\n  \"title\": \"The Complete Guide to Gut Health and Digestion\",\n  \"primaryKeyword\": \"gut health\",\n  \"articleType\": \"pillar\"\n}"
+      },
+      "id": "a5c2d9e1-3f7b-4a6c-8e2d-1b9f3c7a5e8d",
+      "name": "Create Article via API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [550, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "return {\n  success: $json.success,\n  articleTitle: $json.article?.title || 'Unknown',\n  articleId: $json.article?._id || 'Unknown',\n  wordCount: $json.article?.content?.length || 0,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "id": "c7e4f1a3-5b9d-4c2e-8f1d-7a3b5c9e1d3f",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [800, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Create Article via API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Article via API": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {}
+}

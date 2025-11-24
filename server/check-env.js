@@ -1,0 +1,10 @@
+console.log("=== Environment Variables Check ===");
+console.log("AI_API_KEY:", process.env.AI_API_KEY);
+console.log("AI_API_PROVIDER:", process.env.AI_API_PROVIDER);
+console.log("MONGO_URL:", process.env.MONGO_URL ? "SET" : "NOT SET");
+console.log("PORT:", process.env.PORT);
+console.log("");
+console.log("=== Checking dotenv ===");
+require("dotenv").config();
+console.log("AI_API_KEY (after dotenv):", process.env.AI_API_KEY);
+console.log("AI_API_PROVIDER (after dotenv):", process.env.AI_API_PROVIDER);
