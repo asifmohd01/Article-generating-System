@@ -2,7 +2,8 @@
 const axios = require("axios");
 
 const GEMINI_MODEL = "gemini-1.5-flash"; // Fast and efficient model
-const GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models";
+const GEMINI_ENDPOINT =
+  "https://generativelanguage.googleapis.com/v1beta/models";
 
 async function callGemini(prompt, apiKey) {
   try {
@@ -25,9 +26,15 @@ async function callGemini(prompt, apiKey) {
           topK: 40,
         },
         safetySettings: [
-          { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" },
+          {
+            category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+            threshold: "BLOCK_NONE",
+          },
           { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
-          { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
+          {
+            category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+            threshold: "BLOCK_NONE",
+          },
           { category: "HARM_CATEGORY_UNSPECIFIED", threshold: "BLOCK_NONE" },
         ],
       },
@@ -40,7 +47,11 @@ async function callGemini(prompt, apiKey) {
     }
 
     const candidate = response.data.candidates[0];
-    if (!candidate.content || !candidate.content.parts || !candidate.content.parts[0]) {
+    if (
+      !candidate.content ||
+      !candidate.content.parts ||
+      !candidate.content.parts[0]
+    ) {
       console.error("[Gemini Adapter] Invalid response structure", candidate);
       throw new Error("Invalid response structure from Gemini");
     }

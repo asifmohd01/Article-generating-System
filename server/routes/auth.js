@@ -15,6 +15,8 @@ router.get("/ai-status", (req, res) => {
   res.json({
     enabled: hasKey,
     provider: provider ? provider : null,
+    status: hasKey ? "ready" : "not configured",
+    apiKeyConfigured: hasKey,
     hasEndpoint: !!process.env.AI_ENDPOINT,
   });
 });
