@@ -236,37 +236,29 @@ Tests include:
 
 # 🖼 Screenshots
 
-### 🏠 Home
+ ### Home 
+ ![Home](/screenshots/homePage.png) 
 
-![Home](screens/homePage.png)
+ ### Register 
+ ![Register](/screenshots/register.png) 
 
-### 📝 Register
+ ### Login 
+ ![Login](/screenshots/login.png) 
 
-![Register](screens/register.png)
+ ### Dashboard 
+ ![Dashboard](/screenshots/Dashboard.png) 
 
-### 🔐 Login
+ ### Create Article 
+ ![Create Article](/screenshots/generate-article.png) 
 
-![Login](screens/login.png)
+ ### View Article 
+ ![View Article](/screenshots/content.png) 
 
-### 📊 Dashboard
+ ### Settings 
+ ![Settings](/screenshots/settings.png) 
 
-![Dashboard](screens/Dashboard.png)
-
-### ✍️ Create Article
-
-![Create Article](screens/generate-article.png)
-
-### 📖 View Article
-
-![View Article](screens/content.png)
-
-### ⚙️ Settings
-
-![Settings](screens/settings.png)
-
-### 🔄 n8n Workflow
-
-![n8n Workflow](screens/n8nWrorkflow.png)
+ ### n8n Workflow 
+ ![n8n workflow](/screenshots/n8nWrorkflow.png)
 
 ---
 
